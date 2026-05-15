@@ -4,7 +4,6 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { Lock, Mail, Eye, EyeOff, ArrowRight } from "lucide-react";
 
 export default function AdminLoginPage() {
@@ -14,7 +13,6 @@ export default function AdminLoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const t = useTranslations("admin");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,13 +51,13 @@ export default function AdminLoginPage() {
           <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-4">
             <Lock className="w-8 h-8 text-primary-foreground" />
           </div>
-          <h1 className="text-2xl font-bold">{t("login")}</h1>
+          <h1 className="text-2xl font-bold">تسجيل الدخول</h1>
           <p className="text-muted-foreground mt-2">لوحة التحكم</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium mb-2">{t("email")}</label>
+            <label className="block text-sm font-medium mb-2">البريد الإلكتروني</label>
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <input
@@ -74,7 +72,7 @@ export default function AdminLoginPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-2">{t("password")}</label>
+            <label className="block text-sm font-medium mb-2">كلمة المرور</label>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <input
@@ -118,7 +116,7 @@ export default function AdminLoginPage() {
               />
             ) : (
               <>
-                {t("signIn")}
+                تسجيل الدخول
                 <ArrowRight className="w-4 h-4" />
               </>
             )}
