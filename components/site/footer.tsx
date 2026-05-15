@@ -1,14 +1,16 @@
 "use client";
 
-import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp, Globe } from "lucide-react";
 import { motion } from "framer-motion";
-import type { Profile, SocialLink } from "@/types";
+import type { Profile } from "@/types";
 
 type FooterProps = {
   profile?: Pick<Profile, "email"> | null;
-  socialLinks?: SocialLink[];
+  socialLinks?: Array<{
+    platform: string;
+    url: string;
+  }>;
 };
 
 const getSocialIcon = (platform: string) => {

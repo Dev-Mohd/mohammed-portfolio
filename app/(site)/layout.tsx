@@ -9,7 +9,13 @@ export default async function SiteLayout({
 }) {
   const [profile, socialLinks] = await Promise.all([
     prisma.profile.findFirst({ select: { email: true } }),
-    prisma.socialLink.findMany({ orderBy: { order: "asc" } }),
+    prisma.socialLink.findMany({
+      orderBy: { order: "asc" },
+      select: {
+        platform: true,
+        url: true,
+      },
+    }),
   ]);
 
   return (
