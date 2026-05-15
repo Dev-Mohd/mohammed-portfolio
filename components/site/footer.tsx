@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Profile } from "@/types";
@@ -28,7 +27,6 @@ const getSocialIcon = (platform: string) => {
 };
 
 export function Footer({ profile, socialLinks = [] }: FooterProps) {
-  const t = useTranslations("footer");
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
@@ -54,7 +52,7 @@ export function Footer({ profile, socialLinks = [] }: FooterProps) {
           <div className="text-center md:text-left">
             <h3 className="font-semibold text-lg">محمد الشهري</h3>
             <p className="text-sm text-muted-foreground mt-1">
-              {t("rights")} © {currentYear}
+              جميع الحقوق محفوظة © {currentYear}
             </p>
           </div>
 

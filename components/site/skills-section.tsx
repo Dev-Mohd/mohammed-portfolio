@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { Skill } from "@/types";
 
 interface SkillsSectionProps {
@@ -9,8 +8,6 @@ interface SkillsSectionProps {
 }
 
 export function SkillsSection({ skills }: SkillsSectionProps) {
-  const t = useTranslations("skills");
-
   // Group skills by category
   const categories = skills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
@@ -32,10 +29,10 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            {t("title")}
+            المهارات
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t("subtitle")}
+            التقنيات والأدوات التي أعمل بها
           </p>
         </motion.div>
 

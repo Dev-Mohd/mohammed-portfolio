@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { Send, Mail, MapPin, Phone, CheckCircle, AlertCircle } from "lucide-react";
 import type { Profile } from "@/types";
 
@@ -11,7 +10,6 @@ type ContactSectionProps = {
 };
 
 export function ContactSection({ profile }: ContactSectionProps) {
-  const t = useTranslations("contact");
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -65,10 +63,10 @@ export function ContactSection({ profile }: ContactSectionProps) {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            {t("title")}
+            تواصل معي
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t("subtitle")}
+            هل لديك مشروع في بالك؟ دعنا نتحدث
           </p>
         </motion.div>
 
@@ -112,7 +110,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2">{t("name")}</label>
+                  <label className="block text-sm font-medium mb-2">الاسم</label>
                   <input
                     type="text"
                     value={formState.name}
@@ -123,7 +121,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">{t("email")}</label>
+                  <label className="block text-sm font-medium mb-2">البريد الإلكتروني</label>
                   <input
                     type="email"
                     value={formState.email}
@@ -136,7 +134,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">{t("subject")}</label>
+                <label className="block text-sm font-medium mb-2">الموضوع</label>
                 <input
                   type="text"
                   value={formState.subject}
@@ -147,7 +145,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">{t("message")}</label>
+                <label className="block text-sm font-medium mb-2">الرسالة</label>
                 <textarea
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
@@ -172,7 +170,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
                 ) : (
                   <>
                     <Send className="w-4 h-4" />
-                    {t("send")}
+                    إرسال الرسالة
                   </>
                 )}
               </button>
@@ -185,7 +183,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
                   className="flex items-center gap-2 p-4 rounded-xl bg-green-500/10 text-green-500"
                 >
                   <CheckCircle className="w-5 h-5" />
-                  {t("success")}
+                  تم إرسال رسالتك بنجاح!
                 </motion.div>
               )}
               {status === "error" && (
@@ -195,7 +193,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
                   className="flex items-center gap-2 p-4 rounded-xl bg-red-500/10 text-red-500"
                 >
                   <AlertCircle className="w-5 h-5" />
-                  {t("error")}
+                  حدث خطأ، يرجى المحاولة مرة أخرى
                 </motion.div>
               )}
             </form>

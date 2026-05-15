@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Project } from "@/types";
 import { ArrowUpRight, Star } from "lucide-react";
@@ -12,9 +11,6 @@ interface ProjectsSectionProps {
 }
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
-  const t = useTranslations("projects");
-  const locale = useLocale();
-
   const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
 
   return (
@@ -30,17 +26,17 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         >
           <div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              {t("title")}
+              المشاريع
             </h2>
             <p className="text-lg text-muted-foreground">
-              {t("subtitle")}
+              أعمالي المختارة
             </p>
           </div>
           <Link
             href="/projects"
             className="group inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
           >
-            {t("viewAll")}
+            شاهد الكل
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </motion.div>
@@ -78,7 +74,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                     {project.featured && (
                       <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-medium">
                         <Star className="w-3 h-3 fill-current" />
-                        {t("featured")}
+                        مميز
                       </div>
                     )}
                   </div>

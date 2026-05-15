@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Project } from "@/types";
 import { ArrowUpRight, Star, Filter } from "lucide-react";
@@ -13,7 +12,6 @@ interface ProjectsGridProps {
 }
 
 export function ProjectsGrid({ projects }: ProjectsGridProps) {
-  const t = useTranslations("projects");
   const [filter, setFilter] = useState<string | null>(null);
 
   const allTags = Array.from(
@@ -36,10 +34,10 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
           className="text-center mb-16"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-            {t("title")}
+            المشاريع
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t("subtitle")}
+            أعمالي المختارة
           </p>
         </motion.div>
 
@@ -108,7 +106,7 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
                     {project.featured && (
                       <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-medium">
                         <Star className="w-3 h-3 fill-current" />
-                        {t("featured")}
+                        مميز
                       </div>
                     )}
                   </div>

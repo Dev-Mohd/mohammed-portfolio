@@ -1,13 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { ArrowDown, Sparkles } from "lucide-react";
 
 export function HeroSection() {
-  const t = useTranslations("hero");
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}
@@ -65,7 +62,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
-          <span className="text-muted-foreground">{t("greeting")}</span>
+          <span className="text-muted-foreground">مرحباً، أنا</span>
           <br />
           <span className="bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
             محمد الشهري
@@ -79,7 +76,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl sm:text-2xl text-muted-foreground mb-4 font-light"
         >
-          {t("title")}
+          مطور تطبيقات متنقلة
         </motion.p>
 
         <motion.p
@@ -88,7 +85,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg text-muted-foreground/80 mb-12 max-w-2xl mx-auto"
         >
-          {t("subtitle")}
+          أبني تجارب رقمية استثنائية باستخدام Flutter
         </motion.p>
 
         {/* CTA Buttons */}
@@ -102,7 +99,7 @@ export function HeroSection() {
             href="/projects"
             className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium text-lg hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
           >
-            {t("cta")}
+            شاهد أعمالي
             <motion.span
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -158,7 +155,7 @@ export function HeroSection() {
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center gap-2 text-muted-foreground"
         >
-          <span className="text-xs">{t("scroll")}</span>
+          <span className="text-xs">مرر للأسفل</span>
           <ArrowDown className="w-4 h-4" />
         </motion.div>
       </motion.div>

@@ -3,21 +3,18 @@
 import { useState } from "react";
 import { Link } from "@/i18n/routing";
 import { usePathname } from "next/navigation";
-import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const t = useTranslations("nav");
-  const locale = useLocale();
   const pathname = usePathname();
 
   const navItems = [
-    { href: "/", label: t("home") },
-    { href: "/about", label: t("about") },
-    { href: "/projects", label: t("projects") },
-    { href: "/contact", label: t("contact") },
+    { href: "/", label: "الرئيسية" },
+    { href: "/about", label: "عني" },
+    { href: "/projects", label: "المشاريع" },
+    { href: "/contact", label: "تواصل" },
   ];
 
   const isActive = (href: string) => {

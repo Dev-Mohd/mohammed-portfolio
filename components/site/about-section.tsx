@@ -1,12 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { GraduationCap, Briefcase, Award, Code2 } from "lucide-react";
 
 export function AboutSection() {
-  const t = useTranslations("about");
-
   const features = [
     {
       icon: GraduationCap,
@@ -42,10 +39,10 @@ export function AboutSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            {t("title")}
+            عني
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t("subtitle")}
+            خريج هندسة برمجيات
           </p>
         </motion.div>
 
@@ -58,7 +55,7 @@ export function AboutSection() {
           className="max-w-3xl mx-auto text-center mb-20"
         >
           <p className="text-lg leading-relaxed text-muted-foreground">
-            {t("description")}
+            أمتلك شغفًا كبيرًا بتصميم واجهات المستخدم وتجربة المستخدم، وأعمل على بناء تطبيقات عالية الأداء مع التركيز على الكود النظيف والهندسة البرمجية السليمة.
           </p>
         </motion.div>
 
