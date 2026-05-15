@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Mobile App Developer",
+    "subtitle": "I build exceptional digital experiences with Flutter",
+    "cta": "View My Work",
+    "scroll": "Scroll Down"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Software Engineering Graduate",
+    "description": "I have a great passion for UI/UX design, and I work on building high-performance applications with a focus on clean code and solid software architecture.",
+    "experience": "Years Experience",
+    "projects": "Projects Completed",
+    "clients": "Happy Clients"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies & Tools I Work With"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Selected Works",
+    "viewAll": "View All",
+    "viewProject": "View Project",
+    "featured": "Featured",
+    "technologies": "Technologies Used"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let's talk",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Your message has been sent successfully!",
+    "error": "An error occurred, please try again"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "admin": {
+    "login": "Sign In",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign In",
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "skills": "Skills",
+    "profile": "Profile",
+    "messages": "Messages",
+    "logout": "Logout",
+    "welcome": "Welcome to Dashboard",
+    "totalProjects": "Total Projects",
+    "totalSkills": "Total Skills",
+    "unreadMessages": "Unread Messages",
+    "recentMessages": "Recent Messages"
+  }
+}
