@@ -4,8 +4,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Send, Mail, MapPin, Phone, CheckCircle, AlertCircle } from "lucide-react";
+import type { Profile } from "@/types";
 
-export function ContactSection() {
+type ContactSectionProps = {
+  profile?: Pick<Profile, "email" | "phone" | "location"> | null;
+};
+
+export function ContactSection({ profile }: ContactSectionProps) {
   const t = useTranslations("contact");
   const [formState, setFormState] = useState({
     name: "",
@@ -37,10 +42,15 @@ export function ContactSection() {
     }
   };
 
+  const email = profile?.email || "mohammed@example.com";
+  const phone = profile?.phone || "+966 50 000 0000";
+  const location = profile?.location || "المملكة العربية السعودية";
+  const phoneHref = `tel:${phone.replace(/[^\d+]/g, "")}`;
+
   const contactInfo = [
-    { icon: Mail, label: "mohammed@example.com", href: "mailto:mohammed@example.com" },
-    { icon: Phone, label: "+966 50 000 0000", href: "tel:+966500000000" },
-    { icon: MapPin, label: "المملكة العربية السعودية", href: null },
+    { icon: Mail, label: email, href: `mailto:${email}` },
+    { icon: Phone, label: phone, href: phoneHref },
+    { icon: MapPin, label: location, href: null },
   ];
 
   return (

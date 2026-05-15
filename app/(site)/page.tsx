@@ -8,12 +8,13 @@ import { ContactSection } from "@/components/site/contact-section";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const [skills, projects] = await Promise.all([
+  const [skills, projects, profile] = await Promise.all([
     prisma.skill.findMany({ orderBy: { order: "asc" } }),
     prisma.project.findMany({
       where: { published: true },
       orderBy: { order: "asc" },
     }),
+    prisma.profile.findFirst(),
   ]);
 
   return (
@@ -22,7 +23,7 @@ export default async function HomePage() {
       <AboutSection />
       <SkillsSection skills={skills} />
       <ProjectsSection projects={projects} />
-      <ContactSection />
+      <ContactSection profile={profile} />
     </>
   );
 }
