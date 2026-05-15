@@ -1,20 +1,43 @@
 "use client";
 
 import { Link } from "@/i18n/routing";
-import { useTranslations, useLocale } from "next-intl";
-import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp, Globe } from "lucide-react";
 import { motion } from "framer-motion";
+import type { Profile, SocialLink } from "@/types";
 
-export function Footer() {
+type FooterProps = {
+  profile?: Pick<Profile, "email"> | null;
+  socialLinks?: SocialLink[];
+};
+
+const getSocialIcon = (platform: string) => {
+  switch (platform.toLowerCase()) {
+    case "github":
+      return Github;
+    case "linkedin":
+      return Linkedin;
+    case "twitter":
+    case "x":
+      return Twitter;
+    default:
+      return Globe;
+  }
+};
+
+export function Footer({ profile, socialLinks = [] }: FooterProps) {
   const t = useTranslations("footer");
-  const locale = useLocale();
   const currentYear = new Date().getFullYear();
 
-  const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:mohammed@example.com", label: "Email" },
+  const footerLinks = [
+    ...socialLinks.map((link) => ({
+      icon: getSocialIcon(link.platform),
+      href: link.url,
+      label: link.platform,
+    })),
+    ...(profile?.email
+      ? [{ icon: Mail, href: `mailto:${profile.email}`, label: "Email" }]
+      : []),
   ];
 
   const scrollToTop = () => {
@@ -35,7 +58,7 @@ export function Footer() {
 
           {/* Social Links */}
           <div className="flex items-center gap-3">
-            {socialLinks.map((social) => (
+            {footerLinks.map((social) => (
               <motion.a
                 key={social.label}
                 href={social.href}
