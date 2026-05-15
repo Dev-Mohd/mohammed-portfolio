@@ -2,23 +2,18 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { ProjectDetail } from "@/components/site/project-detail";
 
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+
 interface ProjectPageProps {
-  params: { slug: string };
-}
-
-export async function generateStaticParams() {
-  const projects = await prisma.project.findMany({
-    select: { slug: true },
-  });
-
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+  params: Promise<{ slug: string }>;
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+
   const project = await prisma.project.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
   });
 
   if (!project) {

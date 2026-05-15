@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { AppProviders } from "@/components/providers/app-providers";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -23,26 +20,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
-  if (!routing.locales.includes(locale as "ar" | "en")) {
-    notFound();
-  }
-
-  const messages = await getMessages();
-  const isRTL = locale === "ar";
-
   return (
-    <html lang={locale} dir={isRTL ? "rtl" : "ltr"} className="dark">
+    <html lang="ar" dir="rtl" className="dark">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
-        </NextIntlClientProvider>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

@@ -5,11 +5,12 @@ import { auth } from "@/lib/auth";
 // GET single project
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const project = await prisma.project.findUnique({
-      where: { id: params.id },
+      where: { id },
     });
     if (!project) {
       return NextResponse.json({ error: "Project not found" }, { status: 404 });
@@ -26,7 +27,7 @@ export async function GET(
 // PUT update project
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const session = await auth();
   if (!session?.user || session.user.role !== "admin") {
@@ -34,9 +35,10 @@ export async function PUT(
   }
 
   try {
+    const { id } = await params;
     const data = await request.json();
     const project = await prisma.project.update({
-      where: { id: params.id },
+      where: { id },
       data,
     });
     return NextResponse.json(project);
@@ -51,7 +53,7 @@ export async function PUT(
 // DELETE project
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const session = await auth();
   if (!session?.user || session.user.role !== "admin") {
@@ -59,8 +61,9 @@ export async function DELETE(
   }
 
   try {
+    const { id } = await params;
     await prisma.project.delete({
-      where: { id: params.id },
+      where: { id },
     });
     return NextResponse.json({ success: true });
   } catch {

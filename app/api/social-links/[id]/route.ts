@@ -5,7 +5,7 @@ import { auth } from "@/lib/auth";
 // PUT update social link
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const session = await auth();
   if (!session?.user || session.user.role !== "admin") {
@@ -13,9 +13,10 @@ export async function PUT(
   }
 
   try {
+    const { id } = await params;
     const data = await request.json();
     const link = await prisma.socialLink.update({
-      where: { id: params.id },
+      where: { id },
       data,
     });
     return NextResponse.json(link);
@@ -30,7 +31,7 @@ export async function PUT(
 // DELETE social link
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const session = await auth();
   if (!session?.user || session.user.role !== "admin") {
@@ -38,8 +39,9 @@ export async function DELETE(
   }
 
   try {
+    const { id } = await params;
     await prisma.socialLink.delete({
-      where: { id: params.id },
+      where: { id },
     });
     return NextResponse.json({ success: true });
   } catch {
