@@ -5,6 +5,8 @@ import { SkillsSection } from "@/components/site/skills-section";
 import { ProjectsSection } from "@/components/site/projects-section";
 import { ContactSection } from "@/components/site/contact-section";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const [skills, projects] = await Promise.all([
     prisma.skill.findMany({ orderBy: { order: "asc" } }),

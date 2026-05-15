@@ -22,9 +22,9 @@ export function Navbar() {
 
   const isActive = (href: string) => {
     if (href === "/") {
-      return pathname === `/${locale}` || pathname === `/${locale}/`;
+      return pathname === "/";
     }
-    return pathname.startsWith(`/${locale}${href}`);
+    return pathname.startsWith(href);
   };
 
   return (
@@ -72,12 +72,13 @@ export function Navbar() {
 
           {/* Language Switcher & Mobile Menu */}
           <div className="flex items-center gap-4">
-            <Link
-              href={pathname.replace(`/${locale}`, locale === "ar" ? "/en" : "/ar")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-lg hover:bg-muted"
+            <button
+              type="button"
+              className="text-sm font-medium text-muted-foreground px-3 py-1.5 rounded-lg cursor-not-allowed opacity-60"
+              title="Language switching needs locale routes before enabling it"
             >
-              {locale === "ar" ? "EN" : "عربي"}
-            </Link>
+              EN
+            </button>
 
             {/* Mobile Menu Button */}
             <button
