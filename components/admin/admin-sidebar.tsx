@@ -1,6 +1,7 @@
 "use client";
 
-import { Link, usePathname } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { signOut } from "next-auth/react";
 import { motion } from "framer-motion";
