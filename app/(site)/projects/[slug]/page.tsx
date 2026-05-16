@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { ProjectDetail } from "@/components/site/project-detail";
+import { fallbackProjects } from "@/lib/fallback-data";
 
 export const dynamic = "force-dynamic";
 export const dynamicParams = true;
@@ -11,10 +12,7 @@ interface ProjectPageProps {
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-
-  const project = await prisma.project.findUnique({
-    where: { slug },
-  });
+  const project = await getProject(slug);
 
   if (!project) {
     notFound();
@@ -25,4 +23,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <ProjectDetail project={project} />
     </div>
   );
+}
+
+async function getProject(slug: string) {
+  try {
+    const project = await prisma.project.findUnique({
+      where: { slug },
+    });
+
+    return project ?? fallbackProjects.find((item) => item.slug === slug);
+  } catch {
+    return fallbackProjects.find((item) => item.slug === slug);
+  }
 }
