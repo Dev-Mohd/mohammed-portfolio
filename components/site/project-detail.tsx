@@ -3,7 +3,14 @@
 import { motion } from "framer-motion";
 import { Project } from "@/types";
 import { Link } from "@/i18n/routing";
-import { ArrowLeft, ExternalLink, Github, Calendar, Tag } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  ExternalLink,
+  Github,
+  Calendar,
+  Tag,
+} from "lucide-react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -76,6 +83,37 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               className="object-cover"
               priority
             />
+          </motion.div>
+        )}
+
+        {project.slug === "qattah" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="mb-12 overflow-hidden rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-card to-card p-6"
+          >
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold text-emerald-600 dark:text-emerald-300">
+                  دراسة حالة مفصلة
+                </p>
+                <h2 className="mt-2 text-2xl font-bold">
+                  صفحة خاصة تعرض تجربة تطبيق قطّه
+                </h2>
+                <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">
+                  استعرض المشكلة، الحل، الواجهات، نظام التصميم، ورحلة المستخدم
+                  في صفحة Case Study مصممة لهوية التطبيق.
+                </p>
+              </div>
+              <Link
+                href="/projects/qattah/case-study"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+              >
+                فتح صفحة المشروع
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
           </motion.div>
         )}
 

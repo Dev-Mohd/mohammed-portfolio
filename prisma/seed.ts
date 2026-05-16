@@ -95,12 +95,12 @@ async function main() {
     {
       id: "2",
       slug: "qattah",
-      title: "قطه",
-      subtitle: "تطبيق إدارة المهام والقوائم",
-      description: "تطبيق أنيق لإدارة المهام والقوائم مع تصميم عصري يعتمد على نظام Q6H للتصميم.",
-      content: "## نظرة عامة\n\nقطه هو تطبيق أنيق لإدارة المهام والقوائم.\n\n## المميزات\n- إنشاء قوائم متعددة\n- إدارة المهام بسهولة\n- تصميم عصري ومينيمال\n- دعم الوضع المظلم\n\n## التقنيات المستخدمة\n- Flutter\n- Riverpod\n- SQLite\n- IBM Plex Sans Arabic",
-      tags: ["Flutter", "Riverpod", "Design System"],
-      technologies: ["Flutter", "Dart", "Riverpod", "SQLite"],
+      title: "قطّه",
+      subtitle: "تطبيق سعودي لتنظيم وجبات العمل والحسابات الجماعية",
+      description: "تطبيق عربي يساعد فرق العمل على تسجيل الحضور، تتبع المصروفات، وحساب نصيب كل شخص من الوجبات المشتركة تلقائياً بدون جداول أو خلافات.",
+      content: "## نظرة عامة\n\nقطّه تطبيق سعودي يساعد الزملاء على إدارة المصاريف المشتركة للوجبات اليومية داخل بيئة العمل.\n\n## المميزات\n- تسجيل الحضور اليومي\n- حساب تلقائي للنصيب\n- تتبع المصروفات والسداد\n- تقارير شهرية\n- واجهة عربية RTL\n- يعمل بدون إنترنت",
+      tags: ["Mobile App", "RTL Arabic", "Fintech Productivity"],
+      technologies: ["Flutter", "Dart", "Riverpod", "SQLite", "SQLCipher"],
       featured: true,
       order: 2,
     },
@@ -121,7 +121,7 @@ async function main() {
   for (const project of projects) {
     await prisma.project.upsert({
       where: { id: project.id },
-      update: {},
+      update: project,
       create: project,
     });
   }
