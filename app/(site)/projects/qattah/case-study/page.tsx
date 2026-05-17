@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { QattahCaseStudy } from "@/components/site/qattah-case-study";
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "قطّه — تطبيق سعودي لتنظيم وجبات العمل والحسابات الجماعية",
+  title: "قطّه — Dev-Mohd/Qattah-app",
   description:
-    "Case Study لتطبيق قطّه: تطبيق عربي RTL يساعد فرق العمل على تسجيل الحضور، تتبع المصروفات، وحساب نصيب كل شخص من الوجبات المشتركة تلقائياً.",
+    "صفحة مشروع قطّه المرتبطة بمستودع Dev-Mohd/Qattah-app على GitHub وصفحة Replit الأصلية.",
   openGraph: {
-    title: "قطّه — تطبيق سعودي لتنظيم وجبات العمل والحسابات الجماعية",
+    title: "قطّه — Dev-Mohd/Qattah-app",
     description:
-      "تطبيق عربي يساعد فرق العمل على تسجيل الحضور، تتبع المصروفات، وحساب نصيب كل شخص من الوجبات المشتركة تلقائياً.",
+      "صفحة مشروع قطّه المرتبطة بمستودع Dev-Mohd/Qattah-app على GitHub وصفحة Replit الأصلية.",
     type: "article",
   },
 };
 
 export default function QattahCaseStudyPage() {
-  return <QattahCaseStudy />;
+  redirect("/projects/qattah");
 }

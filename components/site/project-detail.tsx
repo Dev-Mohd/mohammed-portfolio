@@ -11,8 +11,7 @@ interface ProjectDetailProps {
 
 export function ProjectDetail({ project }: ProjectDetailProps) {
   const appPageUrl =
-    project.liveUrl ||
-    (project.slug === "qattah" ? "/projects/qattah/case-study" : null);
+    project.liveUrl || project.githubUrl || null;
 
   return (
     <article className="py-24 lg:py-32">
