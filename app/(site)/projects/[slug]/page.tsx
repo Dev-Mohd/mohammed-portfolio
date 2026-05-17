@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { ProjectDetail } from "@/components/site/project-detail";
+import { QattahCaseStudy } from "@/components/site/qattah-case-study";
 import { fallbackProjects } from "@/lib/fallback-data";
 
 export const dynamic = "force-dynamic";
@@ -12,6 +13,11 @@ interface ProjectPageProps {
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
+
+  if (slug === "qattah") {
+    return <QattahCaseStudy />;
+  }
+
   const project = await getProject(slug);
 
   if (!project) {
