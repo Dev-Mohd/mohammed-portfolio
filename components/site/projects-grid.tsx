@@ -29,7 +29,7 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mx-auto max-w-3xl divide-y divide-border border-y border-border">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -38,23 +38,25 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               layout
+              className="py-6"
             >
-              <Link href={`/projects/${project.slug}`} className="group block">
-                <div className="flex h-full items-center justify-between gap-5 rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-                  <div className="min-w-0">
-                    <h3 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="mt-3 line-clamp-2 text-sm leading-7 text-muted-foreground">
-                      {project.description}
-                    </p>
-                  </div>
-                  <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
-                    عرض المشروع
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </span>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div className="min-w-0">
+                  <h2 className="text-2xl font-bold tracking-tight">
+                    {project.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {project.description}
+                  </p>
                 </div>
-              </Link>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="inline-flex shrink-0 items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                >
+                  صفحة التطبيق
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>
