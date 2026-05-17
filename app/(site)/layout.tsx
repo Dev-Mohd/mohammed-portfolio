@@ -1,6 +1,5 @@
 import { prisma } from "@/lib/db";
-import { Navbar } from "@/components/site/navbar";
-import { Footer } from "@/components/site/footer";
+import { SiteChrome } from "@/components/site/site-chrome";
 
 async function getSiteChromeData() {
   try {
@@ -29,10 +28,8 @@ export default async function SiteLayout({
   const { profile, socialLinks } = await getSiteChromeData();
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer profile={profile} socialLinks={socialLinks} />
-    </div>
+    <SiteChrome profile={profile} socialLinks={socialLinks}>
+      {children}
+    </SiteChrome>
   );
 }
