@@ -87,7 +87,9 @@ const ScreenCard = ({
 
 const AppStoreBadge = ({ className = "" }: { className?: string }) => (
   <a
-    href="#"
+    href="https://apps.apple.com/us/app/qattah-app/id6768451077"
+    target="_blank"
+    rel="noopener noreferrer"
     data-testid="badge-appstore"
     className={`inline-flex items-center gap-3 bg-black border border-white/15 rounded-2xl px-5 py-3 hover:border-white/30 hover:bg-white/5 transition-all duration-200 ${className}`}
   >
@@ -202,12 +204,12 @@ const Hero = () => (
           </div>
 
           <h1 className="text-[72px] md:text-[88px] font-black text-white leading-[1.1] mb-6 tracking-tight">
-            نظّم وجبات الدوام،<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#34d399]">وشارك بالعدل.</span>
+            نظّم وجبات الدوام<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] to-[#34d399]">وشارك بالعدل</span>
           </h1>
 
           <p className="text-[18px] md:text-[20px] text-white/55 mb-10 max-w-xl mx-auto lg:mx-0 leading-[1.7] font-medium">
-            قطّه يحل لك مشكلة حساب مصاريف الفطور والغداء في الدوام — من إضافة الأعضاء وتسجيل الوجبات، إلى تقارير PDF شهرية وإشعارات السداد.
+            قطّه يحلّ مشكلة حساب مصاريف الفطور والغداء في الدوام من إضافة الأعضاء وتسجيل الوجبات إلى إصدار تقارير PDF شهرية وإشعارات السداد
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
@@ -248,12 +250,12 @@ const Hero = () => (
 
 const Values = () => {
   const values = [
-    { icon: <ListChecks className="w-6 h-6 text-[#10b981]" />, title: "قوائم متعددة", desc: "أنشئ قائمة لكل مجموعة: فطور الدوام، غداء الفريق، طلعة الاستراحة." },
-    { icon: <Clock className="w-6 h-6 text-[#10b981]" />, title: "حساب تلقائي", desc: "حدد الحاضرين والتطبيق يوزع المبلغ بالعدل — من حضر فقط يُحسب عليه." },
-    { icon: <CreditCard className="w-6 h-6 text-[#10b981]" />, title: "تتبع السداد", desc: "متابعة السداد الجزئي والكامل لكل عضو. اعرف مين سدّد ومين ما سدّد." },
-    { icon: <FileText className="w-6 h-6 text-[#10b981]" />, title: "تقارير PDF", desc: "صدّر تقريراً شهرياً احترافياً بهوية قطّه وشاركه مباشرةً." },
-    { icon: <Bell className="w-6 h-6 text-[#10b981]" />, title: "تذكير يومي", desc: "إشعار يومي يذكّرك بتسجيل الوجبة حتى ما تفوتك أي وجبة." },
-    { icon: <ShieldCheck className="w-6 h-6 text-[#10b981]" />, title: "أمان وتشفير", desc: "قاعدة بيانات مشفرة بـ SQLCipher. بياناتك محمية ولا تغادر جهازك." },
+    { icon: <ListChecks className="w-6 h-6 text-[#10b981]" />, title: "قوائم متعددة", desc: "أنشئ قائمة لكل مجموعة من فطور الدوام إلى غداء الفريق وطلعات الاستراحة" },
+    { icon: <Clock className="w-6 h-6 text-[#10b981]" />, title: "حساب تلقائي", desc: "حدّد الحاضرين والتطبيق يوزّع المبلغ بالعدل على من حضر فقط" },
+    { icon: <CreditCard className="w-6 h-6 text-[#10b981]" />, title: "تتبع السداد", desc: "تابع السداد الجزئي والكامل لكل عضو واعرف من سدّد ومن لم يسدّد" },
+    { icon: <FileText className="w-6 h-6 text-[#10b981]" />, title: "تقارير PDF", desc: "أصدر تقريراً شهرياً احترافياً بهوية قطّه وشاركه مباشرة" },
+    { icon: <Bell className="w-6 h-6 text-[#10b981]" />, title: "تذكير يومي", desc: "إشعار يومي يذكّرك بتسجيل الوجبة حتى لا تفوتك أي وجبة" },
+    { icon: <ShieldCheck className="w-6 h-6 text-[#10b981]" />, title: "أمان وتشفير", desc: "قاعدة بيانات مشفرة بـ SQLCipher وبياناتك محمية ولا تغادر جهازك" },
   ];
 
   return (
@@ -330,15 +332,15 @@ const Features = () => (
       <FeatureBlock
         tag="إدارة الأعضاء والوجبات"
         title="أضف زملائك والوجبات بسهولة"
-        desc="أنشئ قائمتك، أضف أعضاءها، وسجّل كل وجبة مع تحديد الحاضرين — والتطبيق يوزّع المبلغ على الحاضرين فقط تلقائياً."
+        desc="أنشئ قائمتك وأضف أعضاءها وسجّل كل وجبة مع تحديد الحاضرين والتطبيق يوزّع المبلغ على الحاضرين فقط تلقائياً"
         img={screen3}
         imgAlt="إضافة الأعضاء والوجبات"
       />
 
       <FeatureBlock
         tag="الأرصدة والسداد"
-        title="اعرف على مين ومين له"
-        desc="لوحة أرصدة فورية تُظهر رصيد كل عضو — المدين، الدائن، والمسدّد. مع دعم السداد الجزئي والكامل والتتبع الدقيق."
+        title="اعرف من له ومن عليه"
+        desc="لوحة أرصدة فورية تُظهر رصيد كل عضو من المدين إلى الدائن والمسدّد مع دعم السداد الجزئي والكامل والتتبع الدقيق"
         img={screen4}
         imgAlt="الأرصدة والمديونيات"
         reversed
@@ -347,7 +349,7 @@ const Features = () => (
       <FeatureBlock
         tag="تعدد القوائم"
         title="كل القوائم في مكان واحد"
-        desc="قائمة لفطور الدوام وأخرى لغداء الفريق وثالثة لطلعات الاستراحة — كل مجموعة لها ملخصها المستقل مع المصاريف والسداد والمتبقي."
+        desc="قائمة لفطور الدوام وأخرى لغداء الفريق وثالثة لطلعات الاستراحة ولكل مجموعة ملخصها المستقل مع المصاريف والسداد والمتبقي"
         img={screen2}
         imgAlt="القوائم المتعددة"
       />
@@ -357,17 +359,17 @@ const Features = () => (
 
 const HowItWorks = () => {
   const steps = [
-    { num: "01", title: "أضف موظفيك", desc: "سجل أسماء الزملاء المشتركين في القطة." },
-    { num: "02", title: "سجّل الوجبة", desc: "اكتب تكلفة الفطور أو الغداء اليومية." },
-    { num: "03", title: "احسب النصيب", desc: "حدد الحضور والتطبيق يوزع المبلغ فوراً." },
-    { num: "04", title: "شارك التقرير", desc: "نهاية الشهر أرسل كشف الحساب PDF." },
+    { num: "01", title: "أضف الزملاء", desc: "سجّل أسماء الزملاء المشتركين في القطة" },
+    { num: "02", title: "سجّل الوجبة", desc: "اكتب تكلفة الفطور أو الغداء اليومية" },
+    { num: "03", title: "احسب القطة", desc: "حدّد الحاضرين والتطبيق يوزّع المبلغ فوراً" },
+    { num: "04", title: "شارك التقرير", desc: "في نهاية الشهر أرسل كشف الحساب PDF" },
   ];
 
   return (
     <section id="how-it-works" className="py-32 bg-[#0d1612] relative border-y border-white/5" dir="rtl">
       <div className="container mx-auto px-6">
         <div className="text-center mb-24">
-          <h2 className="text-[48px] md:text-[64px] font-black text-white mb-4 tracking-tight">كيف يعمل التطبيق؟</h2>
+          <h2 className="text-[48px] md:text-[64px] font-black text-white mb-4 tracking-tight">كيف يعمل التطبيق</h2>
           <p className="text-[20px] text-white/55 font-medium max-w-2xl mx-auto">أربع خطوات بسيطة تريحك من الحسابات اليدوية</p>
         </div>
 
@@ -453,7 +455,7 @@ const Reports = () => (
             تقارير شهرية واضحة واحترافية
           </h2>
           <p className="text-[18px] md:text-[20px] text-white/55 mb-8 font-medium leading-[1.7]">
-            نهاية كل شهر، بكبسة زر واحدة، صدّر تقريراً كاملاً ومفصلاً يوضّح كل شيء لكل عضو.
+            في نهاية كل شهر وبضغطة زر واحدة أصدر تقريراً كاملاً ومفصلاً يوضّح كل شيء لكل عضو
           </p>
           <ul className="space-y-4 mb-8">
             {[
@@ -485,14 +487,14 @@ const Reports = () => (
 
 const AdvancedFeatures = () => {
   const features = [
-    { icon: <WifiOff />, title: "يعمل بدون إنترنت", desc: "سجّل الوجبات في أي وقت وأي مكان حتى بدون اتصال بالشبكة." },
-    { icon: <Database />, title: "تخزين محلي", desc: "بياناتك تحفظ على جهازك فقط لضمان الخصوصية التامة." },
-    { icon: <Users />, title: "أعضاء غير محدودين", desc: "أضف العدد اللي تحتاجه من الزملاء بدون أي قيود." },
-    { icon: <Palette />, title: "الوضع الليلي والنهاري", desc: "واجهة تتكيف مع تفضيلاتك وتدعم الوضع المظلم بالكامل." },
-    { icon: <Download />, title: "نسخ احتياطي", desc: "احفظ نسخة من بياناتك واسترجعها في أي وقت." },
-    { icon: <ShieldCheck />, title: "حماية بالبصمة", desc: "قفل التطبيق باستخدام بصمة الوجه أو الإصبع لزيادة الأمان." },
-    { icon: <BarChart3 />, title: "إحصائيات تفصيلية", desc: "رسوم بيانية توضح معدل الصرف الشهري والتغيرات." },
-    { icon: <Moon />, title: "إشعارات ذكية", desc: "تنبيهات بأوقات الوجبات والسداد المستحق." },
+    { icon: <WifiOff />, title: "يعمل بدون إنترنت", desc: "سجّل الوجبات في أي وقت وأي مكان حتى بدون اتصال بالشبكة" },
+    { icon: <Database />, title: "تخزين محلي", desc: "بياناتك تُحفظ على جهازك فقط لضمان الخصوصية التامة" },
+    { icon: <Users />, title: "أعضاء غير محدودين", desc: "أضف العدد الذي تحتاجه من الزملاء بدون أي قيود" },
+    { icon: <Palette />, title: "الوضع الليلي والنهاري", desc: "واجهة تتكيّف مع تفضيلاتك وتدعم الوضع المظلم بالكامل" },
+    { icon: <Download />, title: "نسخ احتياطي", desc: "احفظ نسخة من بياناتك واسترجعها في أي وقت" },
+    { icon: <ShieldCheck />, title: "حماية بالبصمة", desc: "قفل التطبيق باستخدام بصمة الوجه أو الإصبع لمزيد من الأمان" },
+    { icon: <BarChart3 />, title: "إحصائيات تفصيلية", desc: "رسوم بيانية توضّح معدل الصرف الشهري والتغيرات" },
+    { icon: <Moon />, title: "إشعارات ذكية", desc: "تنبيهات بأوقات الوجبات والسداد المستحق" },
   ];
 
   return (
@@ -529,9 +531,9 @@ const SimpleWorkflow = () => (
     <div className="container mx-auto px-6">
       <div className="grid md:grid-cols-3 gap-8">
         {[
-          { icon: <WifiOff className="w-10 h-10 text-[#10b981]" />, title: "بدون إنترنت", desc: "تطبيق قطّه يعمل بكامل مميزاته حتى بدون اتصال بالإنترنت." },
-          { icon: <Zap className="w-10 h-10 text-[#10b981]" />, title: "إعداد في ثوانٍ", desc: "لا يحتاج إنشاء حساب. حمّل التطبيق وابدأ مباشرة بإضافة زملائك." },
-          { icon: <Lock className="w-10 h-10 text-[#10b981]" />, title: "بياناتك مشفرة", desc: "نستخدم SQLCipher لحماية قاعدة بياناتك محلياً على جهازك." },
+          { icon: <WifiOff className="w-10 h-10 text-[#10b981]" />, title: "بدون إنترنت", desc: "تطبيق قطّه يعمل بكامل مزاياه حتى بدون اتصال بالإنترنت" },
+          { icon: <Zap className="w-10 h-10 text-[#10b981]" />, title: "إعداد في ثوانٍ", desc: "لا يحتاج إلى إنشاء حساب احمل التطبيق وابدأ مباشرة بإضافة زملائك" },
+          { icon: <Lock className="w-10 h-10 text-[#10b981]" />, title: "بياناتك مشفرة", desc: "نستخدم SQLCipher لحماية قاعدة بياناتك محلياً على جهازك" },
         ].map((card, i) => (
           <motion.div
             key={i}
@@ -554,12 +556,12 @@ const SimpleWorkflow = () => (
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const faqs = [
-    { q: "هل التطبيق مجاني؟", a: "نعم، تطبيق قطّه مجاني بالكامل للتحميل والاستخدام الأساسي." },
-    { q: "هل يحتاج الأعضاء تحميل التطبيق؟", a: "لا، يكفي أن يقوم شخص واحد بتحميل التطبيق وإدارة القائمة وإرسال التقارير للبقية." },
-    { q: "هل بياناتي محفوظة في السحابة؟", a: "لا، كل بياناتك مشفرة ومحفوظة محلياً في جهازك لضمان الخصوصية التامة." },
-    { q: "كيف تتم عملية السداد؟", a: "التطبيق لا يقوم بتحويل الأموال، هو فقط يحسب لك (مين له ومين عليه). التحويل يتم بينكم كالمعتاد." },
-    { q: "هل يدعم التطبيق السداد الجزئي؟", a: "نعم، يمكنك تسجيل سداد جزئي لأي عضو وسيقوم التطبيق بحساب المتبقي تلقائياً." },
-    { q: "هل أقدر استخدم التطبيق لطلعات الاستراحة مو بس الدوام؟", a: "أكيد! تقدر تنشئ قوائم متعددة بأي اسم: الدوام، الاستراحة، السفر، الخ." },
+    { q: "هل التطبيق مجاني", a: "نعم تطبيق قطّه مجاني بالكامل للتحميل والاستخدام الأساسي" },
+    { q: "هل يحتاج الأعضاء تحميل التطبيق", a: "لا يكفي أن يقوم شخص واحد بتحميل التطبيق وإدارة القائمة وإرسال التقارير للبقية" },
+    { q: "هل بياناتي محفوظة في السحابة", a: "لا فكل بياناتك مشفرة ومحفوظة محلياً في جهازك لضمان الخصوصية التامة" },
+    { q: "كيف تتم عملية السداد", a: "التطبيق لا يقوم بتحويل الأموال وهو يحسب فقط من له ومن عليه والتحويل يتم بينكم كالمعتاد" },
+    { q: "هل يدعم التطبيق السداد الجزئي", a: "نعم يمكنك تسجيل سداد جزئي لأي عضو وسيقوم التطبيق بحساب المتبقي تلقائياً" },
+    { q: "هل يمكن استخدام التطبيق لطلعات الاستراحة وليس الدوام فقط", a: "بالتأكيد يمكنك إنشاء قوائم متعددة بأي اسم كالدوام والاستراحة والسفر وغيرها" },
   ];
 
   return (
@@ -614,10 +616,10 @@ const CTA = () => (
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#10b981]/20 rounded-full blur-[100px] pointer-events-none" />
         <div className="relative z-10">
           <h2 className="text-[48px] md:text-[64px] font-black text-white mb-6 tracking-tight leading-tight">
-            جاهز تريّح راسك من الحسابات؟
+            هل أنت مستعد للتخلص من الحسابات اليدوية
           </h2>
           <p className="text-[20px] text-white/80 font-medium mb-10 max-w-xl mx-auto leading-[1.7]">
-            حمّل قطّه الآن وابدأ بتنظيم مصاريف الدوام في ثوانٍ.
+            حمّل قطّه الآن وابدأ بتنظيم مصاريف الدوام في ثوانٍ
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
             <AppStoreBadge className="w-full sm:w-auto justify-center" />
